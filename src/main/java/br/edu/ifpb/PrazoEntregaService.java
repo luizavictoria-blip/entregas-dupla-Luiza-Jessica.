@@ -17,4 +17,14 @@ public class PrazoEntregaService {
 
         return 5;
     }
+
+    public int calcularPrazo(int distanciaKm, boolean expressa) {
+        int prazoNormal = calcularPrazo(distanciaKm);
+
+        if (!expressa) {
+            return prazoNormal;
+        }
+        return Math.max(1, prazoNormal - 1);
+    }
+
 }

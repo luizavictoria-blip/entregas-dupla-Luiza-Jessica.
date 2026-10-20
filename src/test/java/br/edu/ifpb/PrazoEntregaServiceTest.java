@@ -47,4 +47,20 @@ class PrazoEntregaServiceTest {
                 () -> service.calcularPrazo(0)
         );
     }
+
+    @Test
+    void distancia_51_expressa_deveRetornarUmDiaAMenos() {
+        assertEquals(2, service.calcularPrazo(51, true));
+    }
+
+    @Test
+    void distancia_201_expressa_deveRetornarQuatroDias() {
+        assertEquals(4, service.calcularPrazo(201, true));
+    }
+
+    @Test
+    void expressa_nuncaDeveFicarAbaixoDeUmDia() {
+        assertEquals(1, service.calcularPrazo(10, true));
+    }
+
 }
