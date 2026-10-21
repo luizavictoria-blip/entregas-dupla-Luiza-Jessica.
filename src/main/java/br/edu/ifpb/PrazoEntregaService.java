@@ -27,4 +27,15 @@ public class PrazoEntregaService {
         return Math.max(1, prazoNormal - 1);
     }
 
+    public int calcularTaxa(int distanciaKm) {
+        if (distanciaKm <= 0) {
+            throw new IllegalArgumentException("Distancia invalida");
+        }
+
+        if (distanciaKm <= 50) return 10;
+        if (distanciaKm <= 200) return 20;
+        return 40;
+    }
+
+
 }
